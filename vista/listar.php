@@ -1,4 +1,11 @@
 <!-- views/listar.php -->
+ <?php
+    include "config/establecer-sesion.php";
+    if (!isset($_SESSION['idusuario']) || !isset($_SESSION['password'])) {  // si el usuario estuviera ya logeado, lo derivamos al inicio interno
+        header("Location: ./vista/login.php");    // nosotros haremos comprobación de token
+        exit();
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="es">
 
