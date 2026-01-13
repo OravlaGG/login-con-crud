@@ -10,8 +10,8 @@
 <body>
     <h2>Editar Alumno</h2>
     <!-- Usamos $tripulante_data que viene del controlador -->
-    <form method="POST" action="index.php?action=edit&id=<?php echo $tripulante_data->numTripulante; ?>">
-        <input type="hidden" name="numTripulante" value="<?php echo $tripulante_data->numTripulante; ?>">
+    <form method="POST" action="index.php?action=edit&id=<?php echo $tripulante_data->numTripulante;?>">
+        <input type="hidden" name="numTripulante" value="<?php echo $tripulante_data->numTripulante;?>">
         <label>Nombre: <input type="text" name="nombre" value="<?php echo htmlspecialchars($tripulante_data->nombre); ?>" required></label><br>
         <label>Apellidos: <input type="text" name="apellidos" value="<?php echo htmlspecialchars($tripulante_data->apellidos); ?>" required></label><br>
         <label>Fecha de Nacimiento: <input type="date" name="fechaNacimiento" value="<?php echo htmlspecialchars($tripulante_data->fechaNacimiento); ?>" required></label><br>

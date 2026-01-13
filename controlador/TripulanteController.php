@@ -29,17 +29,17 @@ class TripulanteController
             $this->tripulante->apellidos = $_POST['apellidos'];
             $this->tripulante->fechaNacimiento = $_POST['fechaNacimiento'];
             $this->tripulante->submarino = $_POST['submarino'];
-            $this->tripulante->viaja = isset($_POST['repite']) ? 1 : 0;
+            $this->tripulante->viaja = isset($_POST['viaja']) ? 1 : 0;
 
             if ($this->tripulante->create()) {
                 header("Location: index.php?action=index&message=created");
                 exit();
             } else {
                 $error = "Error al crear alumno.";
-                include 'views/crear.php'; // Recargar vista con error
+                include 'vista/crear.php'; // Recargar vista con error
             }
         } else {
-            include 'views/crear.php';
+            include 'vista/crear.php';
         }
     }
 
@@ -47,12 +47,12 @@ class TripulanteController
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Lógica de actualización (UPDATE)
-            $this->tripulante->numTri = $_POST['numTri'];
+            $this->tripulante->numTri = $_POST['numTripulante'];
             $this->tripulante->nombre = $_POST['nombre'];
             $this->tripulante->apellidos = $_POST['apellidos'];
             $this->tripulante->fechaNacimiento = $_POST['fechaNacimiento'];
             $this->tripulante->submarino = $_POST['submarino'];
-            $this->tripulante->viaja = isset($_POST['repite']) ? 1 : 0;
+            $this->tripulante->viaja = isset($_POST['viaja']) ? 1 : 0;
 
             if ($this->tripulante->update()) {
                 header("Location: index.php?action=index&message=updated");
@@ -67,8 +67,8 @@ class TripulanteController
             $this->tripulante->numTri = $_GET['id'];
             $this->tripulante->readOne();
             if ($this->tripulante->nombre) {
-                $tripulante_data = (object)['numAlumno' => $this->tripulante->numTri, 'nombre' => $this->tripulante->nombre, 'apellidos' => $this->tripulante->apellidos, 'fechaNacimiento' => $this->tripulante->fechaNacimiento, 'submarino'=>$this->tripulante->submarino,'repite' => $this->tripulante->viaja];
-                include 'views/editar.php';
+                $tripulante_data = (object)['numAlumno' => $this->tripulante->numTri, 'nombre' => $this->tripulante->nombre, 'apellidos' => $this->tripulante->apellidos, 'fechaNacimiento' => $this->tripulante->fechaNacimiento, 'submarino'=>$this->tripulante->submarino,'viaja' => $this->tripulante->viaja];
+                include 'vista/editar.php';
             } else {
                 echo "Alumno no encontrado.";
             }

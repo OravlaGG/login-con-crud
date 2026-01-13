@@ -63,14 +63,14 @@ class Tripulante
             $this->apellidos = $row['apellidos'];
             $this->fechaNacimiento = $row['fechaNacimiento'];
             $this->submarino = $row['submarino'];
-            $this->viaja = $row['repite'];
+            $this->viaja = $row['viaja'];
         }
     }
 
     // Método para actualizar un alumno
     public function update()
     {
-        $query = "UPDATE " . $this->table_name . " SET nombre=:nombre, apellidos=:apellidos, fechaNacimiento=:fechaNacimiento, repite=:repite, submarino=:submarino WHERE numTripulante=:numTripulante";
+        $query = "UPDATE " . $this->table_name . " SET nombre=:nombre, apellidos=:apellidos, fechaNacimiento=:fechaNacimiento, viaja=:viaja, submarino=:submarino WHERE numTripulante=:numTripulante";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':nombre', $this->nombre);
@@ -78,7 +78,7 @@ class Tripulante
         $stmt->bindParam(':fechaNacimiento', $this->fechaNacimiento);
         $stmt->bindParam(':viaja', $this->viaja, PDO::PARAM_INT);
         $stmt->bindParam(':numTripulante', $this->numTri, PDO::PARAM_INT);
-         $stmt->bindParam(':submarino', $this->submarino);
+        $stmt->bindParam(':submarino', $this->submarino);
 
         if ($stmt->execute()) {
             return true;

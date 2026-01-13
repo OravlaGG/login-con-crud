@@ -1,5 +1,5 @@
 <?php
-error_reporting(0);
+//error_reporting(0);
 
 require_once 'controlador/TripulanteController.php'; // incluimos la declaración de la Clase AlumnoController
 require_once 'controlador/AuthController.php';  // el controlador de autentificación y
