@@ -121,10 +121,10 @@
             <div class="col-12 col-sm-10 col-md-8 col-lg-5">
                 <div class="card login-card p-4">
                     <div class="text-center mb-3">
-                        <h1 class="login-title h1">Nuevo Tripulante</h1>
+                        <h1 class="login-title h1">Editar Tripulante</h1>
                         <div class="text-secondary small"></div>
                     </div>
-                    <form method="POST" index.php?action=edit&id=<?php echo $tripulante_data->numTripulante;?>">
+                    <form method="POST" action="index.php?action=edit&id=<?php echo $tripulante_data->numTripulante;?>">
                         <div class="mb-3">
                             <input type="hidden" name="numTripulante" value="<?php echo $tripulante_data->numTripulante;?>">
                             <label class="form-label text-secondary small">Nombre: </label>
@@ -147,10 +147,10 @@
                             <input type="checkbox" name="viaja" <?php echo $tripulante_data->viaja ? 'checked' : ''; ?>>
                         </div>
                         <div class="d-grid">
-                            <button type="submit" class="btn btn-barotrauma btn-lg">INTEGRAR TRIPULANTE</button>
+                            <button type="submit" class="btn btn-barotrauma btn-lg">CAMBIAR TRIPULANTE</button>
                         </div>
                         <div class="mt-4 d-grid">
-                            <button onclick="location.href='../index.php?action=index';" type="button" href="index.php?action=index" class="btn btn-barotrauma-vuelta btn-lg">VOLVER A LA LISTA</button>
+                            <button onclick="location.href='index.php?action=index';" type="button" href="index.php?action=index" class="btn btn-barotrauma-vuelta btn-lg">VOLVER A LA LISTA</button>
                         </div>
                     </form>
                     <div class="text-center mt-4 status">
