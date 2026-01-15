@@ -19,14 +19,19 @@ class Usuario
         $query = "SELECT * FROM " . $this->tabla_nombre . " WHERE idusuario = ? AND password = ? LIMIT 0,1";
         $stmt = $this->PDO->prepare($query);
         $stmt->bindParam(1, $idusuario);
-        $stmt->bindParam(2, $password);
         $stmt->execute();
 
         $num = $stmt->rowCount(); 
 
-        if ($num > 0) {
+        if ($num > 0) 
+        {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $row; // Devuelve los datos del usuario
+            
+            if (password_verify($password, $row['password']))
+            {
+                return $row;
+            }
+             // Devuelve los datos del usuario
         }
         return false; // Usuario no encontrado
     }
