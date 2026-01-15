@@ -149,7 +149,7 @@
                             <button type="submit" class="btn btn-barotrauma btn-lg">INTEGRAR TRIPULANTE</button>
                         </div>
                         <div class="mt-4 d-grid">
-                            <button onclick="location.href='../index.php?action=index';" type="button" href="index.php?action=index" class="btn btn-barotrauma-vuelta btn-lg">VOLVER A LA LISTA</button>
+                            <button onclick="location.href='index.php?action=index';" type="button" href="index.php?action=index" class="btn btn-barotrauma-vuelta btn-lg">VOLVER A LA LISTA</button>
                         </div>
                     </form>
                     <div class="text-center mt-4 status">
