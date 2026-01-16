@@ -67,7 +67,7 @@ class TripulanteController
             $this->tripulante->numTri = $_GET['id'];
             $this->tripulante->readOne();
             if ($this->tripulante->nombre) {
-                $tripulante_data = (object)['numAlumno' => $this->tripulante->numTri, 'nombre' => $this->tripulante->nombre, 'apellidos' => $this->tripulante->apellidos, 'fechaNacimiento' => $this->tripulante->fechaNacimiento, 'submarino'=>$this->tripulante->submarino,'viaja' => $this->tripulante->viaja];
+                $tripulante_data = (object)['numTri' => $this->tripulante->numTri, 'nombre' => $this->tripulante->nombre, 'apellidos' => $this->tripulante->apellidos, 'fechaNacimiento' => $this->tripulante->fechaNacimiento, 'submarino'=>$this->tripulante->submarino,'viaja' => $this->tripulante->viaja];
                 include 'vista/editar.php';
             } else {
                 echo "Alumno no encontrado.";
