@@ -223,7 +223,7 @@
             <tbody>
             <?php foreach ($tripulante as $tripulante): ?>
                 <tr>
-                    <td><?= $tripulante['numTripulante'] ?></td>
+                    <td><?= $tripulante['numTri'] ?></td>
                     <td><?= htmlspecialchars($tripulante['nombre']) ?></td>
                     <td><?= htmlspecialchars($tripulante['apellidos']) ?></td>
                     <td><?= htmlspecialchars($tripulante['fechaNacimiento']) ?></td>
@@ -236,9 +236,9 @@
                         <?php endif; ?>
                     </td>
                     <td class="text-center actions">
-                        <a href="index.php?action=edit&id=<?= $tripulante['numTripulante'] ?>">Editar</a>
+                        <a href="index.php?action=edit&id=<?= $tripulante['numTri'] ?>">Editar</a>
                         |
-                        <a href="index.php?action=delete&id=<?= $tripulante['numTripulante'] ?>"
+                        <a href="index.php?action=delete&id=<?= $tripulante['numTri'] ?>"
                            onclick="return confirm('¿Confirmar eliminación?');">
                             Eliminar
                         </a>

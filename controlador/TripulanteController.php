@@ -47,7 +47,7 @@ class TripulanteController
     {
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Lógica de actualización (UPDATE)
-            $this->tripulante->numTri = $_POST['numTripulante'];
+            $this->tripulante->numTri = $_POST['numTri'];
             $this->tripulante->nombre = $_POST['nombre'];
             $this->tripulante->apellidos = $_POST['apellidos'];
             $this->tripulante->fechaNacimiento = $_POST['fechaNacimiento'];

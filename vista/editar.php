@@ -124,9 +124,9 @@
                         <h1 class="login-title h1">Editar Tripulante</h1>
                         <div class="text-secondary small"></div>
                     </div>
-                    <form method="POST" action="index.php?action=edit&id=<?php echo $tripulante_data->numTripulante;?>">
+                    <form method="POST" action="index.php?action=edit&id=<?php echo $tripulante_data->numTri;?>">
                         <div class="mb-3">
-                            <input type="hidden" name="numTripulante" value="<?php echo $tripulante_data->numTripulante;?>">
+                            <input type="hidden" name="numTri" value="<?php echo $tripulante_data->numTri;?>">
                             <label class="form-label text-secondary small">Nombre: </label>
                             <input type="text" name="nombre" class="form-control" value="<?php echo htmlspecialchars($tripulante_data->nombre); ?>" required>
                         </div>

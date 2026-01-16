@@ -20,7 +20,7 @@ class Tripulante
     // Método para leer todos los alumnos
     public function read()
     {
-        $query = "SELECT * FROM " . $this->table_name . " ORDER BY numTripulante ASC";
+        $query = "SELECT * FROM " . $this->table_name . " ORDER BY numTri ASC";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
         return $stmt;
@@ -52,7 +52,7 @@ class Tripulante
     // Método para leer un solo alumno (para editar)
     public function readOne()
     {
-        $query = "SELECT * FROM " . $this->table_name . " WHERE numTripulante = ? LIMIT 0,1";
+        $query = "SELECT * FROM " . $this->table_name . " WHERE numTri = ? LIMIT 0,1";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1, $this->numTri);
         $stmt->execute();
@@ -70,16 +70,16 @@ class Tripulante
     // Método para actualizar un alumno
     public function update()
     {
-        $query = "UPDATE " . $this->table_name . " SET nombre=:nombre, apellidos=:apellidos, fechaNacimiento=:fechaNacimiento, viaja=:viaja, submarino=:submarino WHERE numTripulante=:numTripulante";
+        $query = "UPDATE " . $this->table_name . " SET nombre=:nombre, apellidos=:apellidos, fechaNacimiento=:fechaNacimiento, viaja=:viaja, submarino=:submarino WHERE numTri=:numTri";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':nombre', $this->nombre);
         $stmt->bindParam(':apellidos', $this->apellidos);
         $stmt->bindParam(':fechaNacimiento', $this->fechaNacimiento);
         $stmt->bindParam(':viaja', $this->viaja, PDO::PARAM_INT);
-        $stmt->bindParam(':numTripulante', $this->numTri, PDO::PARAM_INT);
         $stmt->bindParam(':submarino', $this->submarino);
-
+        $stmt->bindParam(':numTri', $this->numTri, PDO::PARAM_INT);
+       
         if ($stmt->execute()) {
             return true;
         }
@@ -89,7 +89,7 @@ class Tripulante
     // Método para eliminar un alumno
     public function delete()
     {
-        $query = "DELETE FROM " . $this->table_name . " WHERE numTripulante = ?";
+        $query = "DELETE FROM " . $this->table_name . " WHERE numTri = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(1, $this->numTri, PDO::PARAM_INT);
 
