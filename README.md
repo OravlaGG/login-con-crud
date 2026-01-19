@@ -13,6 +13,6 @@ Una vez hallamos encontrado el usuario almacenaremos el nombre de usuario en la 
 
 En la lista el usuario tendra varias opciones, primero se le mostrara los elementos guardados en la base de datos para que asi decida hacer con ellos. Tiene la opción de editar o eliminarlos, tambien podra añadir nuevos tripulantes a la base de datos. Por ultimo podras desloguearse y volver al login destruyendo asi la sesión y las Cookies.
 
-La EDICIÓN y la CREACIÓN tienen la misma estructura con la unica diferencia de que el edición ves los datos que tiene el elemneto seleccionado en la zona de listado.
+La EDICIÓN y la CREACIÓN tienen la misma estructura con la unica diferencia de que el edición ves los datos que tiene el elemento seleccionado en la zona de listado.
 
 La ELIMINACIÓN tiene la caracteristica de que te pregunta con un Alert si quieres realizar la operación, esto es para prevenir que se haya seleccionado por error.
