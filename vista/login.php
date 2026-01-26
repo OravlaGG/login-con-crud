@@ -142,7 +142,16 @@ if (isset($_SESSION['usuario_logueado'])) {  // si el usuario estuviera ya logea
           <div class="text-center mt-3 footer">
             Europa Submarine Command Coorporation ©
           </div>
-
+          <?php
+              if (isset($_GET['error']))
+                {
+                  echo '<div class="alert alert-danger" role="alert">';
+                  echo $_GET['error'];
+                  echo '</div>';
+                  //$_SESSION['error'] = "";
+                  unset($_SESSION['error']);//Desaparece la key y la variable
+                }
+            ?>
         </div>
       </div>
     </div>
