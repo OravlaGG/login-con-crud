@@ -23,3 +23,4 @@ La EDICIÓN y la CREACIÓN tienen la misma estructura con la unica diferencia de
 ![alt text](https://github.com/OravlaGG/login-con-crud/blob/main/img-readme/Editar.png)
 
 La ELIMINACIÓN tiene la caracteristica de que te pregunta con un Alert si quieres realizar la operación, esto es para prevenir que se haya seleccionado por error.
+

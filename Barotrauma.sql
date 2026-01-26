@@ -22,7 +22,8 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
-
+CREATE DATABASE IF NOT EXISTS barotrauma;
+USE barotrauma;
 --
 -- Estructura de tabla para la tabla `tripulantes`
 --
@@ -65,7 +66,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`coduser`, `idusuario`, `password`, `nombre`, `apellidos`) VALUES
-(11, 'Alvaro', '$2y$10$ztODERf/AGuaj1dYjjAB3eqoc4cl09ziTD7LGF.seSuXG0OxFoFz.', 'Alvaro', 'Gomez Gozalez');
+(11, 'AlvaroGG', '$2y$10$ztODERf/AGuaj1dYjjAB3eqoc4cl09ziTD7LGF.seSuXG0OxFoFz.', 'Alvaro', 'Gomez Gozalez');
 
 --
 -- Índices para tablas volcadas
@@ -97,3 +98,18 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE USER IF NOT EXISTS 'capitan'@'localhost'
+IDENTIFIED BY '1234';
+
+-- Revocar cualquier permiso previo (por seguridad)
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'capitan'@'localhost';
+
+-- Dar permisos SOLO sobre la tabla tripulantes
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON barotrauma.tripulantes
+TO 'capitan'@'localhost';
+
+GRANT SELECT
+ON barotrauma.usuarios
+TO 'capitan'@'localhost';

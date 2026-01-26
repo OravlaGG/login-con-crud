@@ -1,0 +1,6 @@
+Para aquel que le concierna el usuario para 
+acceder al apartado del crud es lo contenido entre "":
+
+Usuario: "AlvaroGG"
+
+PASSWORD : "Lalaland."

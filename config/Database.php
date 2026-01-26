@@ -3,8 +3,8 @@
 class Database
 {
     private $host = 'localhost';
-    private $db_name = 'login-php';
-    private $username = 'login-php'; 
+    private $db_name = 'barotrauma';
+    private $username = 'capitan'; 
     private $password = '1234'; 
     /*Hace falta hacer distintas maneras de acceso a la BD  
     Para poder acceder sin modificar la tabla de logers pero 
